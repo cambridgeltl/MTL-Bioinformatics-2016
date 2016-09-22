@@ -1,6 +1,5 @@
 *.pyc
 *.log
-*.tsv
 *~
 logs/
 conv/predictions/
