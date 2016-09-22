@@ -5,7 +5,7 @@ This repository contains the models and supplmentary data for the paper *A Neura
 The supplmentary data can be found in the file *supplmentary.pdf*.  
 
 The corpora used for the experiments (which can be re-distributed) are in the **data** folder.  
-**Note:**The re-distribution sttaus of the BioCreative IV Chemical and Drug (BC4CHEMD) named entity recognition task corpus is unclear but it can be publicaly accessed at http://www.biocreative.org/tasks/biocreative-v/track-3-cdr/.
+**Note:**The re-distribution status of the BioCreative IV Chemical and Drug (BC4CHEMD) named entity recognition task corpus is unclear but it can be publicly accessed at http://www.biocreative.org/tasks/biocreative-v/track-3-cdr/.
 
 The models can be found in the **models** folder.  
 
@@ -14,9 +14,9 @@ There are several files in the models folder:
 
    *Example Usage*: python baseline.py 'path/to/dataset' 'path/to/vectorfile'
 
-+ baseline_config.py: The configurable variables and their values for the MLP baseline model.
++ baseline_config.py: The configurable variables and their values for the MLP baseline model (baseline.py).
 + config.py: The configurable variables and their values for the convolutional models.
-+ MT-dependent.py: The multi-task Depenedent Model.
++ MT-dependent.py: The multi-task Dependent Model.
 
    *Example usage:* python MT-dependent.py 'path/to/data-files'  'dataset-1,...,dataset-*n*'  'path/to/vectorfile'
 + multi-output_MT.py: The multi-output multi-task model.
