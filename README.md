@@ -1,9 +1,13 @@
-# MTL-Bioinformatics-2016
+# READMe
 
-This reposotory contains the models and supplmentary data for the paper *A Neural Network Multi-Task Learning Approach to Biomedical Named Entity Recognition*.
+This repository contains the models and supplmentary data for the paper *A Neural Network Multi-Task Learning Approach to Biomedical Named Entity Recognition* by *Gamal Crichton, Sampo Pyysalo, Billy Chiu* and *Anna Korhonen*.  
 
-The supplmentary data can be found in the file *supplmentary.pdf*.
-The models can be found in the **models** folder.
+The supplmentary data can be found in the file *supplmentary.pdf*.  
+
+The corpora used for the experiments (which can be re-distributed) are in the **data** folder.  
+**Note:**The re-distribution sttaus of the BioCreative IV Chemical and Drug (BC4CHEMD) named entity recognition task corpus is unclear but it can be publicaly accessed at http://www.biocreative.org/tasks/biocreative-v/track-3-cdr/.
+
+The models can be found in the **models** folder.  
 
 There are several files in the models folder:
 + baseline.py: The MLP model used as a baseline for the experiments.
