@@ -31,3 +31,6 @@ Specify the *percent-keep* command to determine how much of the training example
    *Example usage:* python single_task.py 'path/to/dataset' 'path/to/vectorfile'
 
 **Note:**The experiments in the paper applied the Viterbi algorithm to the outputs. Use the --viterbi flag to replicate this.
+
+**License**
+The code is provided under MIT license and the other materials under Creative Commons Attribution 4.0. 
