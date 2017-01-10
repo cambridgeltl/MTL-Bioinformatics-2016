@@ -1,0 +1,15 @@
+BioNLP Shared Task 2013 CG task corpus physical entity annotations.
+
+Original data: http://2013.bionlp-st.org/
+
+Conversion: https://github.com/spyysalo/standoff2conll
+
+Split: original.
+- train: BioNLP-ST_2013_CG_training_data
+- devel: BioNLP-ST_2013_CG_development_data
+- test : BioNLP-ST_2013_CG_test_data
+
+NOTE: only physical entity annotations are included. The original data
+contains overlapping entity annotations, which were resolved in the
+conversion using the "keep-shorter" rule, eliminating longer
+annotations in favor of keeping shorter ones.
