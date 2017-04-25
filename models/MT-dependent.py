@@ -24,6 +24,7 @@ from ltlib.layers import concat, inputs_and_embeddings
 from ltlib.settings import cli_settings, log_settings
 from ltlib.optimizers import get_optimizer
 from ltlib.util import unique
+from ltlib.output import save_token_predictions
 
 from config import Defaults
 
