@@ -83,12 +83,16 @@ def predfile(name=None, dirname=PREDDIR, suffix='tsv'):
     # TODO: eliminate dependency on logfile.time
     assert logfile.time is not None, 'predfile requires logging'
     return open(_logname(name, dirname, suffix, logfile.time), 'w')
-
-def save_token_predictions(dataset, model, writer):
+        
+def save_token_predictions(dataset, model, writer, vmapper=None):
     # TODO including "token" in the function spec is a bit inelegant.
-    name = '{}--{}'.format(main_name(), dataset.name)
+    viterbi_str = '' if not vmapper else 'viterbi'
+    name = '{}--{}--{}'.format(main_name(), dataset.name, viterbi_str)
     if len(dataset.tokens) > 0:
-        dataset.tokens.set_predictions(model.predict(dataset.tokens.inputs))
+        if vmapper:
+            dataset.sentences.map_predictions(vmapper)
+        else:
+            dataset.tokens.set_predictions(model.predict(dataset.tokens.inputs))
     with predfile(name) as out:
         writer(dataset, out)
 
