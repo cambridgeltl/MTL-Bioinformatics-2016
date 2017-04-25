@@ -207,8 +207,10 @@ for step in range(1, config.train_steps + 1):
                     print("%s is not floatable!" % f_score)
                 if f_score > max_fs[eval_ind][0]:
                     max_fs[eval_ind] = (f_score, max_fs[eval_ind][0])
+                    save_token_predictions(data[eval_ind].test, model, conlldata.write)
                 elif f_score > max_fs[eval_ind][1]:
                     max_fs[eval_ind] = (max_fs[eval_ind][0], f_score)
+                    save_token_predictions(data[eval_ind].test, model, conlldata.write)
                 #End Track Maxes    
                 info("{}".format(summary))
                 info("Max Fs: {}".format(str(max_fs[eval_ind])))
@@ -225,8 +227,10 @@ for step in range(1, config.train_steps + 1):
                         print("Viterbi %s is not floatable!" % vf_score)
                     if vf_score > max_vfs[eval_ind][0]:
                         max_vfs[eval_ind] = (vf_score, max_vfs[eval_ind][0])
+                        save_token_predictions(data[eval_ind].test, model, conlldata.write, vmapper)
                     elif vf_score > max_vfs[eval_ind][1]:
                         max_vfs[eval_ind] = (max_vfs[eval_ind][0], vf_score)
+                        save_token_predictions(data[eval_ind].test, model, conlldata.write, vmapper)
                     #End Track Maxes    
                     info("{}".format(vsummary))
                     info("Max Viterbi Fs: {}".format(str(max_vfs[eval_ind])))
