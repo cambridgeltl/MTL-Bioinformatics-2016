@@ -24,7 +24,7 @@ from ltlib.layers import concat, inputs_and_embeddings
 from ltlib.settings import cli_settings, log_settings
 from ltlib.optimizers import get_optimizer
 from ltlib.util import unique
-from ltlib.output import save_token_predictions
+from ltlib.output import save_token_predictions_multi_output
 
 from config import Defaults
 
@@ -157,10 +157,10 @@ for ind, ds in enumerate(data):
                 print("%s is not floatable!" % f_score)
             if f_score > max_fs[ind][0]:
                 max_fs[ind] = (f_score, max_fs[ind][0])
-                save_token_predictions(data[eval_ind].test, model, conlldata.write)
+                save_token_predictions_multi_output(data[eval_ind].test, conlldata.write, predictions=pred)
             elif f_score > max_fs[ind][1]:
                 max_fs[ind] = (max_fs[ind][0], f_score)
-                save_token_predictions(data[eval_ind].test, model, conlldata.write)
+                save_token_predictions_multi_output(data[eval_ind].test, conlldata.write, predictions=pred)
             #End Track Maxes    
             info("{}".format(summary))
             info("Max Fs: {}".format(str(max_fs[ind])))
@@ -177,10 +177,10 @@ for ind, ds in enumerate(data):
                     print("Viterbi %s is not floatable!" % vf_score)
                 if vf_score > max_vfs[ind][0]:
                     max_vfs[ind] = (vf_score, max_vfs[ind][0])
-                    save_token_predictions(data[eval_ind].test, model, conlldata.write, vmapper)
+                    save_token_predictions_multi_output(data[eval_ind].test, conlldata.write, vmapper=vmapper)
                 elif vf_score > max_vfs[ind][1]:
                     max_vfs[ind] = (max_vfs[ind][0], vf_score)
-                    save_token_predictions(data[eval_ind].test, model, conlldata.write, vmapper)
+                    save_token_predictions_multi_output(data[eval_ind].test, conlldata.write, vmapper=vmapper)
                 #End Track Maxes    
                 info("{}".format(vsummary))
                 info("Max Viterbi Fs: {}".format(str(max_vfs[ind])))
