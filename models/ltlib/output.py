@@ -95,6 +95,19 @@ def save_token_predictions(dataset, model, writer, vmapper=None):
             dataset.tokens.set_predictions(model.predict(dataset.tokens.inputs))
     with predfile(name) as out:
         writer(dataset, out)
+        
+def save_token_predictions_multi_output(dataset, writer, predictions=None, vmapper=None):
+    # TODO including "token" in the function spec is a bit inelegant.
+    viterbi_str = '' if not vmapper else 'viterbi'
+    name = '{}--{}--{}'.format(main_name(), dataset.name, viterbi_str)
+    assert(type(predictions).__name__ != None or vmapper != None), "Both predictions and vmapper cannot be None."
+    if len(dataset.tokens) > 0:
+        if vmapper:
+            dataset.sentences.map_predictions(vmapper)
+        if type(predictions).__name__ == 'list':
+            dataset.tokens.set_predictions(predictions)
+    with predfile(name) as out:
+        writer(dataset, out)
 
 def setup_logging(name=None):
     """Set up logging to stderr and file."""
