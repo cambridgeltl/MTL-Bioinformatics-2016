@@ -2,7 +2,7 @@
 
 This repository contains the models and supplmentary data for the paper *A Neural Network Multi-Task Learning Approach to Biomedical Named Entity Recognition* by *Gamal Crichton, Sampo Pyysalo, Billy Chiu* and *Anna Korhonen*.  
 
-The supplmentary data can be found in the file *supplmentary.pdf*.  
+The supplmentary data can be found in the file *Supplmentary.pdf*.  
 
 The corpora used for the experiments (which can be re-distributed) are in the **data** folder.  
 **Note:**The re-distribution status of the BioCreative IV Chemical and Drug (BC4CHEMD) named entity recognition task corpus is unclear but it can be publicly accessed at http://www.biocreative.org/tasks/biocreative-v/track-3-cdr/.
