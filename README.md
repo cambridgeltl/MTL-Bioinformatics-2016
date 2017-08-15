@@ -1,11 +1,11 @@
 # READMe
 
-This repository contains the models and supplmentary data for the paper *A Neural Network Multi-Task Learning Approach to Biomedical Named Entity Recognition* by *Gamal Crichton, Sampo Pyysalo, Billy Chiu* and *Anna Korhonen*.  
+This repository contains the models and supplementary data for the paper *A Neural Network Multi-Task Learning Approach to Biomedical Named Entity Recognition* by *Gamal Crichton, Sampo Pyysalo, Billy Chiu* and *Anna Korhonen*.  
 
-The supplmentary data can be found in the file *Supplmentary.pdf*.  
+The supplementary data can be found in the file *Additional file 1.pdf*.  
 
 The corpora used for the experiments (which can be re-distributed) are in the **data** folder.  
-**Note:**The re-distribution status of the BioCreative IV Chemical and Drug (BC4CHEMD) named entity recognition task corpus is unclear but it can be publicly accessed at http://www.biocreative.org/tasks/biocreative-v/track-3-cdr/.
+**Note:** The re-distribution status of the BioCreative IV Chemical and Drug (BC4CHEMD) named entity recognition task corpus is unclear but it can be publicly accessed at http://www.biocreative.org/tasks/biocreative-v/track-3-cdr/.
 
 The models can be found in the **models** folder.  
 
@@ -30,7 +30,7 @@ Specify the *percent-keep* command to determine how much of the training example
 
    *Example usage:* python single_task.py 'path/to/dataset' 'path/to/vectorfile'
 
-**Note:**The experiments in the paper applied the Viterbi algorithm to the outputs. Use the --viterbi flag to replicate this.
+**Note:** The experiments in the paper applied the Viterbi algorithm to the outputs. Use the --viterbi flag to replicate this.
 
 ## License
 The code is provided under MIT license and the other materials under Creative Commons Attribution 4.0. 
